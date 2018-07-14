@@ -1,0 +1,54 @@
+#
+# ~/.pqivrc wandsas 2018/01/04
+#
+
+
+[options]
+fullscreen=1
+sort=1
+command-1=|convert - -blur 20 -
+
+
+[keybindings]
+
+# -*- Remap q and w to move between images -*-
+q { goto_file_relative(-1); }
+w { goto_file_relative(1); }
+
+
+# -*- Setup x to cycle through 100%, 50% & 25% zoom levels -*-
+x { send_keys(#1); }g
+<numbersign>1 { set_scale_level_absolute(1.); bind_key(x { send_keys(#2\); }) }
+<numbersign>2 { set_scale_level_absolute(.5); bind_key(x { send_keys(#3\); }); }
+<numbersign>3 { set_scale_level_absolute(0.25); bind_key(x { send_keys(#1\); }); }
+
+
+### EXAMPLES ###
+# 1:
+pqiv  --bind-key="a { goto_file_byindex(0) }" --bind-key='c { command(echo -n $1 | xclip) }'
+
+# Rebinds a to go back to the first image
+# c to store the path of the current image to clipboard using x clip and loads all files from foo folder and bar.pdf, sorted.
+
+# 2.
+pqiv --slideshow --watch-directories --end-of-files-action=wait --slideshow-interval=0.001 test
+
+# Load all files from test folder in a slideshow progressing
+# very fast, and until new files become available.
+# This displays new images as the appear in directory and is
+# useful e.g. if you output images from a script that you later
+# intent to combine into a movie and wish to monitor progress
+
+# 3.
+pqiv --slideshow --allow-empty-window --watch-directories --wait-for-images-to-appear --lazy-load test
+# Set up a slideshow that displays all images from  the  test
+# folder such  that  it  is possible to remove all images from
+# the directory and place new ones into it afterwards without
+# pqiv exiting.
+
+# 4.
+echo "output_file_list(); quit()" | pqiv --actions-from-stdin testg
+# Output a list of all files from the test folder that pqiv can
+# handle and quit.
+
+# vim: set fenc=utf-8 ft=dosini

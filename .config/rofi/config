@@ -1,0 +1,31 @@
+#
+# Rofi
+#
+
+rofi.modi:      drun,run,window,ssh
+rofi.terminal:	urxvtc
+rofi.font:      TerminessTTF Nerd Font Medium 10
+rofi.boldFont:  TerminessTTF Nerd Font Bold 10
+
+rofi.width:		30
+rofi.lines:     10
+rofi.opacity:	10
+
+rofi.hide-scrollbar: true
+rofi.separator-style: solid
+
+rofi.display-run:	sh
+rofi.display-drun:	exec
+
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+
+rofi.color-enabled:     true
+rofi.color-normal:	    argb:00272822, #f8f8f2, argb:00272822, #141411, #f8f8f2
+rofi.color-urgent:      argb:00272822, #f92672, argb:00272822, #f92672, #f8f8f2
+rofi.color-active:      argb:00272822, #a6e22a, argb:00272822, #141411, #a6e22a
+rofi.color-window:      argb:ee272822, #002b36, #e6db74
+rofi.fake-transparency:	true
+
+rofi.theme: /usr/share/rofi/themes/android_notification.rasi
