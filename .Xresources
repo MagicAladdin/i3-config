@@ -1,73 +1,60 @@
 ! $Id: ~/.Xresources wandsas 2018/07/10
 
-!-*-{ Global settings
-*font:                      -*-terminus-*-*-*-*-14-*-*-*-*-*-*-*
-!*background:                #101010
-!*foreground:                #999
+!-*-{ Global font
+*font:                -*-terminus-*-*-*-*-14-*-*-*-*-*-*-*
+!-*- Global Fore/background color -*-!
+!*background:          #101010
 !-*-}
 
 !-*-{ URxvt
-URxvt*termName:             rxvt-unicode-256color
+!-*- General settings -*-
+URxvt*termName:       rxvt-unicode-256color
+!URxvt*allow_bold:     False
+!-*- URxvt fonts -*-
+!URxvt.font:                 xft:Terminess Powerline:size=9,\
+!                            xft:FontAwesome:size=
+!URxvt.letterSpace: 1
+!URxvt.font:                 xft:Terminess Nerd Font:size=9,\
+!                            xft:FontAwesome:size=9
 
-! -*- URxvt fonts -*-
-!URxvt.font:                 xft:Terminess Powerline:size=12:style=Bold,\
-!                            xft:FontAwesome:size=12:style=Bold
-!URxvt.font:                 -*-terminus-*-*-*-*-16-*-*-*-*-*-*-*,\
-!                            xft:FontAwesome:size=12:style=Bold
-!URxvt.font:                 xft:Terminess Powerline:pixelsize=12
-
-! -*- foreground/background -*-
-URxvt.background:           rgba:0000/0000/0000/cddd
-!URxvt.background:           #151515
-!URxvt.foreground:           #999
-
-! -*- URxvt extensions -*-
-URxvt.perl-ext-common:      default,clipboard,matcher,keyboard-select
-URxvt.keysym.M-u:           perl:url-select:select_next
-URxvt.url-launcher:         chromium
-URxvt.matcher.button:       1
-URxvt*matcher.pattern.1:    \\b(mailto|http|https|ftp|file):[/]*[\\w-]\\.[\\w./?&@#-]*[\\w/-]
-URxvt*matcher.pattern.2:    \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
-URxvt.matcher.rend.0:       fg8
-URxvt.underlineURLs:        true
-URxvt.clipboard.autocopy:   true
-
-
-URxvt.keysym.M-Escape:      perl:keyboard-select:activate
-URxvt.keysym.M-c:           perl:clipboard:copy
-URxvt.keysym.M-v:           perl:clipboard:paste
-URxvt.keysym.M-C-v:         perl:clipboard:paste_escaped
-
-! -*- Scrollbar style-*-
-URxvt*scrollstyle:          urxvt
-URxvt*scrollBar:            False
-URxvt*geometry:             128x36
-URxvt.saveLines:            10000
-
-! support stop scrolling on tty output
-URxvt*scrollTtyOutput:      false
-URxvt*scrollWithBuffer:     true
-URxvt*scrollTtyKeypress:    true
-
-! -*- Transparency -*-
-URxvt*transparent:          true
-URxvt*inheritPixmap:        True
-URxvt*shading:              30
-URxvt*tintColor:            #404040
-URxvt*depth:                32
-
-! -*- Fading -*-
-xvt*fading:                 30
-URxvt*fadeColor:            #202020
-
-! -*- Manpages -*-
-URxvt.colorIT:          magenta
-URxvt.colorBD:          yellow
-URxvt.colorUL:          cyan
+!-*- Perl extensions -*-
+URxvt.perl-ext-common:default,clipboard,matcher,keyboard-select
+URxvt.keysym.M-u:     perl:url-select:select_next
+URxvt.url-launcher:    /usr/bin/firefox
+URxvt.underlineURLs:  True
+URxvt.matcher.button: 1
+URxvt.keysym.M-Escape:perl:keyboard-select:activate
+URxvt.keysym.M-c:     perl:clipboard:copy
+URxvt.keysym.M-v:     perl:clipboard:paste
+URxvt.keysym.M-C-v:   perl:clipboard:paste_escaped
+!URxvt.copyCommand:   xsel -ib
+!URxvt.pasteCommand:  xsel -ob
+!-*- Scrollbar style - rxvt::plain:next:xterm -*-
+URxvt*scrollstyle:    urxvt
+URxvt*scrollBar:      False
+URxvt*matcher.button: 1
+URxvt*geometry:       128x36
+URxvt.saveLines:      1000
+!-*- Trasperancy -*-
+URxvt*transparent:    False
+URxvt*inheritPixmap:  False
+URxvt*shading:        30
+URxvt*tintColor:      #404040
+URxvt*depth:          32
+!-*- Fading -*-
+URxvt*fading:         30
+URxvt*fadeColor:      #202020
+!-*- Fore/background -*-
+URxvt.background:     rgba:0000/0000/0000/cddd
+!URxvt*background:     #151515
+!URxvt*foreground:     #999
+!-*- Manpage -*-
+URxvt.colorIT:        magenta
+URxvt.colorBD:        yellow
+URxvt.colorUL:        cyan
 !-*-}
 
 !-*-{ XTerm
-!-*- start via xterm -cl UXTerm or 'uxterm' -*-
 XTerm*faceName:     Terminus
 XTerm*faceSize:     11
 !XTerm*font:         -*-terminus-*-*-*-*-14-*-*-*-*-*-*-*

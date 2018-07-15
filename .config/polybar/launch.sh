@@ -7,8 +7,8 @@ killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch polybar
-#polybar bottom -r&
-polybar example -r&
+polybar top -r&
+polybar bottom -r&
 echo "polybars started."
 
-# vim: fenc=utf-8 ft=sh
+# vim:fenc=utf-8:ft=sh:
