@@ -1,9 +1,12 @@
 ! $Id: ~/.Xresources wandsas 2018/07/10
 
 !-*-{ Global font
+!*font:                -*-terminus-*-*-*-*-*-*-*-*-*-*-*-*
+!*font:                -*-terminus-*-*-*-*-12-*-*-*-*-*-*-*
 *font:                -*-terminus-*-*-*-*-14-*-*-*-*-*-*-*
 !-*- Global Fore/background color -*-!
 !*background:          #101010
+!*.background:     rgba:0000/0000/0000/cddd
 !-*-}
 
 !-*-{ URxvt

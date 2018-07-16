@@ -2,7 +2,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-# {{{ i3 modifier key
+# {{{ i3 modifier keys
 
 set $mod Mod4
 
@@ -78,9 +78,8 @@ client.background       $base07
 
 # }}}
 
-# {{{ Application shortcuts
+# {{{ Application keybindings
 
-# rxvt-unicode / xterm
 bindsym $mod+Return         exec urxvtc
 bindsym $mod+Shift+Return   exec urxvtc -e tmux
 
@@ -104,14 +103,46 @@ bindsym $mod+Shift+f        exec --no-startup-id firefox
 bindsym $mod+Shift+t        exec --no-startup-id lxtask
 bindsym $mod+t              exec --no-startup-id urxvtc -e htop
 
-# kill focused window
+bindsym $alt+p              exec pass peco
+bindsym $alt+Shift          exec pass peco -c
+
+bindsym Print               exec scrot
+bindsym Shift+Print         exec scrot -u
+
+# }}}
+
+# {{{ System keybindings
+
+# Kill focused window
 bindsym $mod+Shift+q kill
+
+# Rename workspace
+bindsym $com+Ctrl+r exec i3-input -F 'rename workspace to "%s"' -P 'New name for this workspace: '
+
+# Mark a container with a single character
+bindsym $com+Ctrl+m exec --no-startup-id i3-input -F 'mark %s' 1 -P 'Mark: '
+
+# Go to the container marked with the above example
+bindsym $com+Ctrl+p exec --no-startup-id i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Go to: '
+
+# {{{ Restart i3 session
+
+bindsym $mod+Shift+r restart
+
+# }}}
+
+# {{{ Exit i3
+# (logs you out of your X session)
+
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# }}}
 
 # }}}
 
 # {{{ Windows
 
-# {{ Change focus
+# {{{ Change focus
 
 bindsym $mod+$left focus left
 bindsym $mod+$down focus down
@@ -136,7 +167,7 @@ bindsym $mod+v split v
 
 # }}}
 
-# {{ Enter fullscreen mode for the focused container
+# {{{ Enter fullscreen mode for the focused container
 
 bindsym $mod+f fullscreen toggle
 
@@ -165,8 +196,8 @@ bindsym $mod+Ctrl+space focus mode_toggle
 
 # {{{ Focus the parent/child container
 
-bindsym $mod+a focus parent
-bindsym $mod+Shift+a focus child
+  bindsym $mod+a focus parent
+  bindsym $mod+Shift+a focus child
 
 # }}}
 
@@ -214,6 +245,34 @@ for_window [class="(?i)gucharmap"]                floating enable
 
 # }}}
 
+# {{{ Resize window
+
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym $left resize shrink width 10 px or 10 ppt
+        bindsym $down resize grow height 10 px or 10 ppt
+        bindsym $up resize shrink height 10 px or 10 ppt
+        bindsym $right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# }}}
+
+# }}}
+
+# {{{ Workspaces
+
 # {{{ Define workspaces
 
 # Define names for default workspaces for which we configure key bindings later on.
@@ -256,6 +315,8 @@ bindsym $mod+0 workspace $ws10
 bindsym $mod+Tab workspace_back_and_forth
 workspace_auto_back_and_forth yes
 
+bindsym $mod+Left         workspace prev_on_output
+bindsym $mod+Right        workspace next_on_output
 # }}}
 
 # {{{ Move focused container to workspace
@@ -271,49 +332,23 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
-# }}}
-
-# {{{ Restart i3 session
-
-bindsym $mod+Shift+r restart
+bindsym $mod+Shift+Left   move container to output left
+bindsym $mod+Shift+Right  move container to output right
 
 # }}}
 
-# {{{ Exit i3
-# (logs you out of your X session)
+# {{{ Rename workspace
 
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+#bindsym $com+Ctrl+r exec i3-input -F 'rename workspace to "%s"' -P 'New name for this workspace: '
 
 # }}}
-
-# {{{ Resize window
-
-mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym $left resize shrink width 10 px or 10 ppt
-        bindsym $down resize grow height 10 px or 10 ppt
-        bindsym $up resize shrink height 10 px or 10 ppt
-        bindsym $right resize grow width 10 px or 10 ppt
-
-        # back to normal: Enter or Escape or $mod+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
-}
-
-bindsym $mod+r mode "resize"
 
 # }}}
 
 # {{{ Autostart services
 
 exec_always --no-startup-id feh --bg-fill ~/.wallpaper.png
-exec_always --no-startup-id ~/.config/polybar/launch.sh
+#exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 exec --no-startup-id xedgewarp -b
 exec --no-startup-id compton --config ~/.config/compton.conf -b
