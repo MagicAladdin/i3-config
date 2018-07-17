@@ -14,7 +14,7 @@
 URxvt*termName:       rxvt-unicode-256color
 !URxvt*allow_bold:     False
 !-*- URxvt fonts -*-
-!URxvt.font:                 xft:Terminess Powerline:size=9,\
+!URxvt.font:                 xft:DejaVu Sans Mono Nerd Font:pixelsize=10,\
 !                            xft:FontAwesome:size=
 !URxvt.letterSpace: 1
 !URxvt.font:                 xft:Terminess Nerd Font:size=9,\
