@@ -117,100 +117,67 @@ bindsym Shift+Print         exec scrot -u
 bindsym $mod+Shift+q kill
 
 # Rename workspace
-bindsym $com+Ctrl+r exec i3-input -F 'rename workspace to "%s"' -P 'New name for this workspace: '
+bindsym $mod+Ctrl+r exec i3-input -F 'rename workspace to "%s"' -P 'New name for this workspace: '
 
 # Mark a container with a single character
-bindsym $com+Ctrl+m exec --no-startup-id i3-input -F 'mark %s' 1 -P 'Mark: '
+bindsym $mod+Ctrl+m exec --no-startup-id i3-input -F 'mark %s' 1 -P 'Mark: '
 
 # Go to the container marked with the above example
-bindsym $com+Ctrl+p exec --no-startup-id i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Go to: '
+bindsym $mod+Ctrl+p exec --no-startup-id i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Go to: '
 
-# {{{ Restart i3 session
-
+# Restart i3 session
 bindsym $mod+Shift+r restart
 
-# }}}
-
-# {{{ Exit i3
-# (logs you out of your X session)
-
+# Exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-
-# }}}
 
 # }}}
 
 # {{{ Windows
 
-# {{{ Change focus
+# Change focus
 
 bindsym $mod+$left focus left
 bindsym $mod+$down focus down
 bindsym $mod+$up focus up
 bindsym $mod+$right focus right
 
-# }}}
-
-# {{{ Move focused window
+# Move focused window
 
 bindsym $mod+Shift+$left move left
 bindsym $mod+Shift+$down move down
 bindsym $mod+Shift+$up move up
 bindsym $mod+Shift+$right move right
 
-# }}}
-
-# {{{ Split in horizontal/vertical orientation
-
+# Split in horizontal/vertical orientation
 bindsym $mod+h split h
 bindsym $mod+v split v
 
-# }}}
-
-# {{{ Enter fullscreen mode for the focused container
-
+# Enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
-# }}}
-
-# {{{ Change container layout
-# (stacked, tabbed, toggle split)
-
+# Change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
-# }}}
-
-# {{{ Toggle tiling / floating
-
+# Toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
-# }}}
-
-# {{{ Change focus between tiling / floating windows
-
+# Change focus between tiling / floating windows
 bindsym $mod+Ctrl+space focus mode_toggle
 
-# }}}
+# Focus the parent/child container
+bindsym $mod+a focus parent
+bindsym $mod+Shift+a focus child
 
-# {{{ Focus the parent/child container
-
-  bindsym $mod+a focus parent
-  bindsym $mod+Shift+a focus child
-
-# }}}
-
-# {{{ Scratchpad show / hide
-
+# Scratchpad show / hide
 # move the currently focused window to the scratchpad
 bindsym $mod+Shift+minus move scratchpad
 
 # Show the next scratchpad window or hide the focused scatchpad window.
 # If there are multiple scratchpad windows, it cycles through them.
 bindsym $mod+minus scratchpad show
-
-# }}}
 
 # {{{ Floating windows
 
@@ -295,8 +262,8 @@ set $ws10 "10:  "
 
 assign [class="(?i)urxvt"]    $ws1
 assign [class="(?i)spacefm"]  $ws2
-assign [class="(?i)chromium-browser-chromium"]  $ws3
 assign [class="(?i)firefox"]  $ws3
+assign [class="(?i)chromium-browser-chromium"]  $ws3
 
 # }}}
 
@@ -318,6 +285,7 @@ workspace_auto_back_and_forth yes
 
 bindsym $mod+Left         workspace prev_on_output
 bindsym $mod+Right        workspace next_on_output
+
 # }}}
 
 # {{{ Move focused container to workspace
@@ -341,7 +309,6 @@ bindsym $mod+Shift+Right  move container to output right
 # {{{ Rename workspace
 
 bindsym $alt+r exec i3-input -F 'rename workspace to "%s"' -P 'New name for this workspace: '
-
 
 # }}}
 

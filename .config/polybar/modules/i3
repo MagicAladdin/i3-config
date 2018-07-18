@@ -1,25 +1,6 @@
-[bar/test]
-monitor = eDP-1
-bottom = true
-
-background = #222222
-foreground = #ccfafafa
-line-color = #666
-
-spacing = 1
-padding-left = 2
-padding-right = 2
-module-margin-left = 1
-module-margin-right = 2
-
-font-0 = envypn-regular:size=10;0
-font-1 = Siji:pixelsize=10;0
-
-modules-left = i3
-
-
 [module/i3]
 type = internal/i3
+;format = <label-state> <label-mode>
 format = <label-state>
 
 ws-icon-0 = term;
@@ -43,5 +24,38 @@ label-unfocused-padding = 2
 label-urgent = %index% %icon%
 label-urgent-background = #bd2c40
 label-urgent-padding = 2
+
+
+;index-sort = true
+;enable-click = true
+;fuzzy-match = true
+;wrapping-scroll = false
+;strip-wsnumbers = true
+
+;label-focused = 
+;label-focused-background = ${colors.foreground}
+;label-focused-foreground = ${colors.background}
+;label-focused-padding = 2
+;label-focused-underline = ${colors.foreground-alt}
+
+;label-unfocused = %icon%
+;label-unfocused-background = ${colors.background}
+;label-unfocused-foreground = ${colors.background-alt}
+;label-unfocused-padding = 2
+;label-unfocused-underline = ${colors.background}
+
+;label-urgent = %icon%
+;label-urgent-background = ${colors.background}
+;label-urgent-foreground = ${colors.foreground-alt}
+;label-urgent-padding = 2
+;label-urgent-underline = ${colors.background}
+
+;label-visible = %icon%
+;label-visible-background = ${colors.background}
+;label-visible-foreground = ${colors.foreground}
+;label-visible-padding = 2
+;label-visible-underline = ${colors.background}
+
+;ws-icon-default = 
 
 ; vim:ft=dosini
