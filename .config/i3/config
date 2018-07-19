@@ -316,21 +316,42 @@ bindsym $alt+r exec i3-input -F 'rename workspace to "%s"' -P 'New name for this
 
 # {{{ Autostart services
 
-exec_always --no-startup-id feh --bg-fill ~/.wallpaper.png
+# {{{ wallpaper
+exec_always --no-startup-id feh --bg-fill ~/.wallpaper
+# }}}
+
+# {{{ statusbar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
+# }}}
 
-exec --no-startup-id xedgewarp -b
+# {{{{ composition-manager
 exec --no-startup-id compton --config ~/.config/compton.conf -b
-exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
+# }}}
 
+# {{{ notifications
+# exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
+# }}}
+
+# {{{ urxvt-daemon
 exec --no-startup-id urxvtd -q -o -f
-exec --no-startup-id spacefm --daemon-mode --no-desktop
+# }}}
 
+# {{{ spacefm-daemon
+# exec --no-startup-id spacefm --daemon-mode --no-desktop
+# }}}
+
+# {{{ redshift
 exec --no-startup-id redshift-gtk -c ~/.config/redshift.conf
-exec --no-startup-id clipit
+# }}}
 
+# {{{ clipit
+exec --no-startup-id clipit
+# }}}
+
+# {{{ mpd
 exec --no-startup-id ~/.mpd/mpd.sh
 exec --no-startup-id ~/.mpd/ympd.sh
+# }}}
 
 # }}}
 

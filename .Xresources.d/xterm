@@ -1,0 +1,54 @@
+! $Id: ~/.Xresources.d/xterm wandsas 2018/07/19
+
+XTerm*faceName:         Terminus
+XTerm*faceSize:         11
+XTerm*font:             -*-terminus-*-*-*-*-14-*-*-*-*-*-*-*
+
+XTerm*cursorColor:      orange
+XTerm*borderColor:      white
+XTerm*scrollColor:      black
+XTerm*loginShell:       true
+XTerm*visualBell:       true
+XTerm*saveLines:        8192
+XTerm*shading:          80
+
+XTerm*allowFontOps:     true
+XTerm*allowSendEvents:  true
+XTerm*internalBorder:   0
+XTerm*borderWidth:      0
+XTerm*multiScroll:      true
+XTerm*utmpInhibit:      false
+XTerm*jumpScroll:       true
+XTerm*waitForMap:       true
+XTerm*scrollBar:        false
+!XTerm*title:           h
+
+!-*- Fix the Alt-p is wacko char problem -*-
+XTerm*eightBitInput:    false
+XTerm*metaSendsEscape:  true
+
+!-*- Athena widget library 7 -*-
+!-*- Comment them out if you have a shallow color depth -*-
+XTerm*mainMenu*backgroundPixmap:     gradient:vertical?dimension=400&start=gray10&end=gray40
+XTerm*mainMenu*foreground:           white
+XTerm*vtMenu*backgroundPixmap:       gradient:vertical?dimension=550&start=gray10&end=gray40
+XTerm*vtMenu*foreground:             white
+XTerm*fontMenu*backgroundPixmap:     gradient:vertical?dimension=300&start=gray10&end=gray40
+XTerm*fontMenu*foreground:           white
+XTerm*tekMenu*backgroundPixmap:      gradient:vertical?dimension=300&start=gray10&end=gray40
+XTerm*tekMenu*foreground:            white
+
+!-*- Fixing backspace xterm -*-
+! http://www.hypexr.org/linux_ruboff.php#bsolution
+XTerm*ttyModes:         erase ^?
+XTerm*VT100.Translations: \
+    #override <Key>BackSpace: string(0x7f) \n\
+		      <Key>Delete:    string(0x1b) string("[3~")
+
+!-*- Manpages -*-
+*VT100.colorBDMode:     true
+*VT100.colorBD:         yellow
+*VT100.colorULMode:     true
+*VT100.colorUL:         cyan
+
+! vim:fenc=utf-8:ci:pi:sts=0:sw=4:ts=4:

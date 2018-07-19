@@ -1,28 +1,27 @@
-[bar/test]
-monitor = eDP-1
-width = 1480
-height = 50
-override-redirect = true
-background = #ff184f
-foreground = #671414
-;offset-x = 850
-;offset-y = 450
-
-module-margin = 1
-spacing = 2
-font-0 = DejaVu:size=8;1
-font-1 = MaterialIcons:size=14;0
-font-2 = Termsynu:size=12;-1
-font-3 = Siji:pixelsize=14;0
-
-modules-center = cpu cpu2
-
-
 [module/cpu]
 type = internal/cpu
 interval = 0.5
-format = <label> <bar-load>
-label = %percentage%%
+
+format = <label> <ramp-coreload>
+;format = <label> <bar-load>
+
+label = CPU [%percentage%%]
+;label = CPU
+;label-font = 3
+;label-foreground = #0088CC
+
+ramp-coreload-0 = ▁
+ramp-coreload-0-font = 4
+ramp-coreload-0-foreground = #0088CC
+ramp-coreload-1 = ▂
+ramp-coreload-1-font = 4
+ramp-coreload-1-foreground = #0088CC
+ramp-coreload-2 = ▃
+ramp-coreload-2-font = 4
+ramp-coreload-2-foreground = #0088CC
+ramp-coreload-3 = ▄
+ramp-coreload-3-font = 4
+ramp-coreload-3-foreground = #0088CC
 
 bar-load-width = 10
 bar-load-foreground-0 = #c1cb7f

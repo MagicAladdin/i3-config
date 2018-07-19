@@ -1,16 +1,23 @@
-[bar/test]
-monitor = eDP-1
-override-redirect = true
+[module/memory]
+type = internal/memory
+format = <label> <bar-used>
+label = RAM [%gb_used%]
+;label-foreground = #0088CC
 
-width = 500
-height = 50
-
-separator = " | "
-
-font-0 = fixed:pixelsize=10;0
-font-1 = unifont:size=6:fontformat=truetype:antialias=false;-1
-
-modules-center = mem mem2
+bar-used-width = 10
+bar-used-gradient = true
+bar-used-foreground-0 = #0088CC
+bar-used-foreground-1 = #2f8419
+bar-used-foreground-2 = #f5a70a
+bar-used-foreground-3 = #ed5456
+bar-used-indicator = █
+bar-used-indicator-font = 3
+bar-used-indicator-foreground = #fff
+bar-used-fill = █
+bar-used-fill-font = 3
+bar-used-empty = █
+bar-used-empty-font = 3
+bar-used-empty-foreground = #44
 
 [module/mem]
 type = internal/memory
@@ -21,16 +28,16 @@ type = internal/memory
 format = <label> <bar-used>
 label = RAM %percentage_used%% %percentage_free%%
 
-bar-used-width = 20
-bar-used-foreground-2 = #0000ff
-bar-used-foreground-3 = #00ff00
-bar-used-foreground-0 = #ff0000
-bar-used-indicator = |
-bar-used-indicator-foreground = #ff
-bar-used-fill = ─
-bar-used-fill-font = 2
-bar-used-empty = ─
-bar-used-empty-font = 2
-bar-used-empty-foreground = #444444
+;bar-used-width = 20
+;bar-used-foreground-2 = #0000ff
+;bar-used-foreground-3 = #00ff00
+;bar-used-foreground-0 = #ff0000
+;bar-used-indicator = |
+;bar-used-indicator-foreground = #ff
+;bar-used-fill = ─
+;bar-used-fill-font = 2
+;bar-used-empty = ─
+;bar-used-empty-font = 2
+;bar-used-empty-foreground = #444444
 
 ; vim:ft=dosini

@@ -3,9 +3,15 @@ type = internal/volume
 mapped = true
 format-volume = <ramp-volume> <label-volume>
 label-volume = %percentage:3%%
-label-muted = MUTE
-format-muted-prefix = " "
+label-volume-foreground = ${colors.foreground}
+
+label-muted = muted
+label-muted-foreground = ${colors.foreground}
+
+format-muted-prefix = " "
 format-muted-prefix-foreground = #00f
+format-muted-foreground = ${colors.foreground}
+
 ;handle-events = false
 ramp-volume-0 = 
 ramp-volume-1 = 

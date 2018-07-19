@@ -1,0 +1,43 @@
+! $Id: ~/.Xresources.d/xcolors wandsas 2018/07/19
+
+!-*- Xcolors -*-
+!-*- Based on Tomorrow Theme -*-
+
+*.foreground:       #c5c8c6
+*.background:       #1d1f21
+*.cursorColor:      orange
+
+!-*- black / grey -*-
+*.color0:           #000000
+*.color8:           #666666
+
+!-*- red / bright-red -*-
+*.color1:           #912226
+*.color9:           #ff3334
+
+!-*- green / bright-green -*-
+*.color2:           #b5bd68
+*.color10:          #9ec400
+
+!-*- yellow (orange) / bright-yellow -*-
+*.color3:           #de935f
+*.color11:          #f0c674
+
+!-*- blue / bright-blue -*-
+*.color4:           #81a2be
+*.color12:          #81a2be
+
+!-*- magenta (purple) / bright-magenta -*-
+*.color5:           #b294bb
+*.color13:          #b777e0
+
+!-*- cyan (aqua) / bright-cyan -*-
+*.color6:           #8abeb7
+*.color14:          #54ced6
+
+
+!-*- light-grey (selection) / white (current line) -*-
+*.color7:           #373b41
+*.color15:          #282a2e
+
+! vim:fenc=utf-8:ts=2:sts=0:sw=2:et:
