@@ -7,6 +7,8 @@
 ;
 ;=====================================================
 
+# {{{ colors
+
 [colors]
 background = ${xrdb:background}
 background-alt = ${xrdb:color9}
@@ -17,14 +19,11 @@ secondary = ${xrdb:color14}
 alert = ${xrdb:color1}
 border = ${xrdb:color15}
 
-
 #
-# Bars
+# Status bars
 #
-
 include-file = ~/.config/polybar/bars/top
 include-file = ~/.config/polybar/bars/bottom
-
 
 #
 # Modules
@@ -33,112 +32,26 @@ include-file = ~/.config/polybar/bars/bottom
 # bar/top left
 include-file = ~/.config/polybar/modules/i3
 include-file = ~/.config/polybar/modules/xwindow
-
 # bar/top center
 include-file = ~/.config/polybar/modules/mpd
-
+include-file = ~/.config/polybar/modules/weather
 # bar/top right
 include-file = ~/.config/polybar/modules/date
 include-file = ~/.config/polybar/modules/volume
-
 # bar/bottom left
-include-file = ~/.config/polybar/modules/filesystem
+include-file = ~/.config/polybar/modules/networkspeed
+include-file = ~/.config/polybar/modules/eth
+include-file = ~/.config/polybar/modules/extip
 # bar/bottom center
+include-file= ~/.config/polybar/modules/coretemp
 # bar/bottom right
+include-file = ~/.config/polybar/modules/filesystem
 include-file = ~/.config/polybar/modules/memory
 include-file = ~/.config/polybar/modules/cpu
 
-[module/coretemps]
-type = custom/script
-exec-if = sensors
-exec = sensors | grep Core | awk '{print substr($3, 2, 2)}' | tr '\n' ' ' | sed 's/ /C  /g' | sed 's/  $//'
-
-[module/networkspeedup]
-type = internal/network
-interface = bond0
-label-connected = "%upspeed:7%"
-format-connected = <label-connected>
-#format-connected-prefix = " "
-format-connected-prefix-foreground = #5b
-
-[module/networkspeeddown]
-type = internal/network
-interface = bond0
-label-connected = "%downspeed:7%"
-format-connected = <label-connected>
-#format-connected-prefix = " "
-format-connected-prefix-foreground = #5b
-
-[module/eth]
-type = internal/network
-interface = bond0
-interval = 3.0
-
-format-connected-prefix = " "
-format-connected-foreground-foreground = ${colors.foreground-alt}
-label-connected = %local_ip%
-
-label-disconnected = %ifname% disconnected
-label-disconnected-foreground = ${colors.foreground-alt}
-
-[module/extip]
-type = custom/script
-interval = 2
-format = <label>
-format-prefix-foreground = ${colors.foreground}
-format-prefix-background = ${colors.background}
-exec = echo "$(dig +short myip.opendns.com @resolver1.opendns.com)"
-exec-if = ping -c 1 gentoo.org
-
-[module/hostname]
-type = custom/script
-interval = 256
-format = "<label> "
-;format-prefix = "  "
-format-prefix-foreground = ${colors.foreground-alt}
-format-padding = 0
-format-background = ${colors.background}
-exec = echo "$(uname -n)"
-
-[module/weather]
-type = custom/script
-interval = 1800
-format = <label>
-format-padding = 1
-; format-suffix = "°C"
-format-prefix-foreground = ${colors.foreground-alt}
-format-background = ${colors.background}
-exec = ~/.dotfiles/i3/.i3/scripts/weather
-
-[module/powermenu]
-type = custom/menu
-
-format-spacing = 1
-
-label-open = 
-label-close = cancel
-label-close-foreground = ${colors.foreground-alt}
-label-separator = |
-label-separator-foreground = ${colors.foreground-alt}
-
-menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = 
-menu-0-1-exec = menu-open-2
-
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = systemctl reboot
-
-menu-2-0 = 
-menu-2-0-exec = systemctl poweroff
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
-
 [settings]
 compositing-background = over   ; xor, screen
-compositing-foreground = over   ; source
+compositing-foreground = difference   ; source, over
 compositing-overline = over
 compositing-underline = over
 compositing-border = over
@@ -150,4 +63,4 @@ margin-bottom = 0
 fixed-center = true
 override-redirect = true
 
-; vim:ft=dosini
+; vim:fenc=utf-8:ft=dosini

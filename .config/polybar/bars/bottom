@@ -15,7 +15,7 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 
 modules-left = hostname extip eth networkspeedup networkspeeddown
-;modules-center = eth temperature
+modules-center = eth temperature coretemp
 modules-right = filesystem cpu memory powermenu
 
 

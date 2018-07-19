@@ -1,6 +1,19 @@
 [module/volume]
 type = internal/volume
 mapped = true
+
+; speaker-mixer = Speaker
+; headphone-mixer = Headphone
+; headphone-id = 9
+
+; master-soundcard = P
+; speaker-soundcard = P
+; headphone-soundcard = P
+
+; ramp-headphones-0 = 
+; ramp-headphones-1 = 
+
+
 format-volume = <ramp-volume> <label-volume>
 label-volume = %percentage:3%%
 label-volume-foreground = ${colors.foreground}
@@ -20,28 +33,5 @@ ramp-volume-3 = 
 ramp-volume-foreground = #00f
 
 
-; [module/volume]
-; type = internal/volume
-; ;mapped = true
-; speaker-mixer = Speaker
-; headphone-mixer = Headphone
-; headphone-id = 9
-;
-; ; master-soundcard = P
-; ; speaker-soundcard = P
-; ; headphone-soundcard = P
-;
-; format-volume = <ramp-volume> <label-volume>
-; label-volume = %percentage%%
-; label-muted = muted
-;
-; ramp-volume-0 = 
-; ramp-volume-1 = 
-; ramp-volume-2 = 
-; ramp-volume-3 = 
-; ramp-volume-foreground = #666
-;
-; ramp-headphones-0 = 
-; ramp-headphones-1 = 
 
 ; vim:ft=dosini

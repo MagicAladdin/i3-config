@@ -1,13 +1,3 @@
-[bar/test]
-monitor = ${env:MONITOR:eDP1}
-bottom = true
-modules-right = systray
-background = #47008b
-foreground = #fff
-font-0 = -*-gohufont-bold-*-*-*-11-*-*-*-*-*-*-*
-
-tray-position = right
-
 [module/systray]
 type = internal/systray
 
@@ -20,4 +10,4 @@ label-toggle-padding = 2
 label-toggle-background = #bc99ed
 label-toggle-foreground = #000
 
-; vim:ft=dosini
+; vim:fenc=utf-8:ft=dosini:

@@ -1,0 +1,11 @@
+[module/hostname]
+type = custom/script
+interval = 256
+format = "<label> "
+format-prefix = "  "
+format-prefix-foreground = ${colors.foreground-alt}
+format-padding = 0
+format-background = ${colors.background}
+exec = echo "$(uname -n)"
+
+; vim:fenc=utf-8:ft=dosini:

@@ -1,0 +1,10 @@
+[module/extip]
+type = custom/script
+interval = 2
+format = <label>
+format-prefix-foreground = ${colors.foreground}
+format-prefix-background = ${colors.background}
+exec = echo "$(dig +short myip.opendns.com @resolver1.opendns.com)"
+exec-if = ping -c 1 gentoo.org
+
+; vim:fenc=utf-8:ft=dosini:

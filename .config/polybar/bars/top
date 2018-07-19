@@ -24,7 +24,7 @@ module-margin-right = 2
 font-0 = Hack:pixelsize=10;1
 font-1 = FontAwesome:pixelsize=10;2
 
-modules-left = i3 xwindow
+modules-left = i3 xworkspaces xwindow
 modules-center = mpd
 modules-right =  volume ip date powermenu
 ;override-redirect = true

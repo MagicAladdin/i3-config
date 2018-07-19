@@ -12,6 +12,6 @@ label-unmounted = %mountpoint%: not mounted
 
 remove-unmounted = true
 ;fixed-values = true
-;spacing = 4
+spacing = 4
 
-# vim:ft=dosini
+; vim:fenc=utf-8:ft=dosini:

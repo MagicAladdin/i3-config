@@ -1,0 +1,11 @@
+[module/weather]
+type = custom/script
+interval = 1800
+format = <label>
+format-padding = 1
+; format-suffix = "°C"
+format-prefix-foreground = ${colors.foreground-alt}
+format-background = ${colors.background}
+exec = ~/.config/polybar/scripts/weather.sh
+
+; vim:fenc=utf-8:ft=dosini:

@@ -2,8 +2,4 @@
 type = internal/xwindow
 label = %title:0:50:...%
 
-; format-padding = 50
-; format-background = #88ffffff
-; format-foreground = #000
-
-; vim:ft=dosini
+; vim:fenc=utf-8:ft=dosini:
