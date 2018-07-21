@@ -17,12 +17,9 @@ module-margin-left = 1
 module-margin-right = 2
 
 
-
-modules-left = hostname extip eth networkspeedup networkspeeddown
+modules-left = hostname extip networkspeedup networkspeeddown
 modules-center = coretemp
 modules-right = cpu ram filesystem
-
-
 
 
 ;wm-restack = i3
