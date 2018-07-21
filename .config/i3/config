@@ -318,7 +318,7 @@ bindsym $alt+r exec i3-input -F 'rename workspace to "%s"' -P 'New name for this
 # {{{ Autostart services
 
 # {{{ wallpaper
-exec_always --no-startup-id feh --bg-fill ~/.wallpaper
+exec_always --no-startup-id feh --bg-fill ~/.wallpaper-i3
 # }}}
 
 # {{{ statusbar

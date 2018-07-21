@@ -1,8 +1,8 @@
-[module/memory]
+[module/ram]
 type = internal/memory
 format = <label> <bar-used>
 label = RAM [%gb_used%]
-;label-foreground = #0088CC
+label-foreground = #0088CC
 
 bar-used-width = 10
 bar-used-gradient = true

@@ -7,7 +7,7 @@
 # Applications you want to run with fluxbox.
 # MAKE SURE THAT APPS THAT KEEP RUNNING HAVE AN & AT THE END.
 #
-exec feh --bg-fill $HOME/.fluxbox-wallpaper &
+exec feh --bg-fill $HOME/.wallpaper-fluxbox &
 exec urxvtd -q -o -f  &
 exec spacefm --daemon-mode --no-desktop &
 exec dunst &
