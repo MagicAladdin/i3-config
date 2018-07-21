@@ -1,7 +1,7 @@
 ! $Id: ~/.Xresources wandsas 2018/07/19
 
-#include ".Xresources.d/fonts"
+!#include ".Xresources.d/fonts"
 #include ".Xresources.d/xcolors"
-#include ".Xresources.d/x11-apps"
-#include ".Xresources.d/xterm"
 #include ".Xresources.d/rxvt-unicode"
+#include ".Xresources.d/xterm"
+#include ".Xresources.d/x11-apps"

@@ -26,7 +26,7 @@ font-1 = FontAwesome:pixelsize=10;2
 
 modules-left = i3 xworkspaces xwindow
 modules-center = mpd
-modules-right =  volume ip date powermenu
+modules-right =  volume date
 ;override-redirect = true
 
 tray-position = right

@@ -1,6 +1,5 @@
 ! $Id: ~/.Xresources.d/x11-apps wandsas 2018/07/19
 
-
 !-*- Xft -*-
 Xft.dpi:        96
 Xft.antialias:  true
@@ -10,11 +9,9 @@ Xft.hintstyle:  hintslight
 Xft.autohint:   false
 Xft.lcdfilter:  lcddefault
 
-
 !-*- Xcursor -*-
 Xcursor.theme:          Vanilla-DMZ-AA
 Xcursor.size:           36
-
 
 !-*- Xscreensaver -*-
 xscreensaver.Dialog.headingFont:        -*-dina-bold-r-*-*-18-*-*-*-*-*-*-*
@@ -40,14 +37,12 @@ xscreensaver.passwd.thermometer.background:  #101010
 xscreensaver.passwd.thermometer.width:       4
 xscreensaver.dateFormat:    %I:%M:%S
 
-
 !-*- Xclock -*-
 Xclock*faceName:          Terminus:pixelsize=8
 Xclock*update:            1
 Xclock*analog:            false
 Xclock*Foreground:        #245f99
 Xclock*background:        #101010
-
 
 !-*- Xcalc -*-
 xcalc*faceName:                        Terminus:pixelsize=8

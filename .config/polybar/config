@@ -28,8 +28,7 @@ include-file = ~/.config/polybar/bars/bottom
 #
 # Modules
 #
-
-# bar/top left
+# bar/top
 include-file = ~/.config/polybar/modules/i3
 include-file = ~/.config/polybar/modules/xwindow
 # bar/top center
@@ -38,10 +37,13 @@ include-file = ~/.config/polybar/modules/weather
 # bar/top right
 include-file = ~/.config/polybar/modules/date
 include-file = ~/.config/polybar/modules/volume
+include-file = ~/.config/polybar/modules/powermenu
+include-file = ~/.config/polybar/modules/systray
+
 # bar/bottom left
 include-file = ~/.config/polybar/modules/networkspeed
-include-file = ~/.config/polybar/modules/eth
 include-file = ~/.config/polybar/modules/extip
+include-file = ~/.config/polybar/modules/hostname
 # bar/bottom center
 include-file= ~/.config/polybar/modules/coretemp
 # bar/bottom right
