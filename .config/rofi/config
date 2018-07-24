@@ -19,7 +19,8 @@ rofi.hide-scrollbar: true
 
 show centered
 rofi.location: 0
-rofi.width: 50
+rofi.width: 30
+!rofi.lines: 10
 
 !
 ! Behavior
@@ -35,6 +36,10 @@ rofi.scroll-method: 1
 !
 rofi.terminal: alacritty
 rofi.ssh-command:                    {terminal} -e '{ssh-client} {host}'
+
+
+
+
 
 ! "Enabled modi" Set from: Default
 ! "Number of lines" Set from: XResources
@@ -244,3 +249,4 @@ rofi.ssh-command:                    {terminal} -e '{ssh-client} {host}'
 ! rofi.display-windowcd:
 ! "The display name of this browser" Set from: Default
 ! rofi.display-combi:
+rofi.theme: /usr/share/rofi/themes/Arc-Dark.rasi
