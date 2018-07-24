@@ -36,7 +36,7 @@ URxvt*fading:           30
 URxvt*fadeColor:        #202020
 
 !-*- Fore/background -*-
-URxvt.background:       rgba:0000/0000/0000/cddd
+!*.background:       rgba:0000/0000/0000/cddd
 !URxvt*foreground:     #999
 
 !-*- Manpage -*-

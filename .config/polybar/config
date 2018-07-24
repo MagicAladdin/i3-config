@@ -7,8 +7,7 @@
 ;
 ;=====================================================
 
-# {{{ colors
-
+; {{{ Colors
 [colors]
 background = ${xrdb:background}
 background-alt = ${xrdb:color9}
@@ -18,39 +17,51 @@ primary = ${xrdb:color6}
 secondary = ${xrdb:color14}
 alert = ${xrdb:color1}
 border = ${xrdb:color15}
+; }}}
 
-#
-# Status bars
-#
+; {{{ Status bars
 include-file = ~/.config/polybar/bars/top
 include-file = ~/.config/polybar/bars/bottom
+; }}}
 
-#
-# Modules
-#
-# bar/top
+; {{{ Modules
+
+; {{{ bar/top left
 include-file = ~/.config/polybar/modules/i3
 include-file = ~/.config/polybar/modules/xwindow
-# bar/top center
-include-file = ~/.config/polybar/modules/mpd
+; }}}
+
+; {{{ bar/top center
+;include-file = ~/.config/polybar/modules/mpd
 include-file = ~/.config/polybar/modules/weather
-# bar/top right
+; }}}
+
+; {{{ bar/top right
 include-file = ~/.config/polybar/modules/date
 include-file = ~/.config/polybar/modules/volume
 include-file = ~/.config/polybar/modules/powermenu
 include-file = ~/.config/polybar/modules/systray
+; }}}
 
-# bar/bottom left
+; {{{ bar/bottom left
 include-file = ~/.config/polybar/modules/networkspeed
 include-file = ~/.config/polybar/modules/extip
 include-file = ~/.config/polybar/modules/hostname
-# bar/bottom center
+; }}}
+
+; {{{  bar/bottom center
 include-file= ~/.config/polybar/modules/coretemp
-# bar/bottom right
+; }}}
+
+# {{{ bar/bottom right
 include-file = ~/.config/polybar/modules/filesystem
 include-file = ~/.config/polybar/modules/ram
 include-file = ~/.config/polybar/modules/cpu
+; }}}
 
+; }}}
+
+; {{{ Settings
 [settings]
 compositing-background = over   ; xor, screen
 compositing-foreground = difference   ; source, over
@@ -58,11 +69,14 @@ compositing-overline = over
 compositing-underline = over
 compositing-border = over
 screenchange-reload = true
+; }}}
 
+; {{{ global/wm
 [global/wm]
 margin-top = 0
 margin-bottom = 0
 fixed-center = true
 override-redirect = true
+; }}}
 
-; vim:fenc=utf-8:ft=dosini
+; vim:fenc=utf-8:ft=dosini:ts=2:sts=0:sw=2:fdm=marker:foldlevel=0:

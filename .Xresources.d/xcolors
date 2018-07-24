@@ -1,56 +1,41 @@
-! $Id: ~/.Xresources.d/xcolors wandsas 2018/07/19
+! Base16 Bright
+! Scheme: Chris Kempson (http://chriskempson.com)
 
+! #define base00 [70]#000000
+#define base00 #000000
+#define base01 #303030
+#define base02 #505050
+#define base03 #b0b0b0
+#define base04 #d0d0d0
+#define base05 #e0e0e0
+#define base06 #f5f5f5
+#define base07 #ffffff
+#define base08 #fb0120
+#define base09 #fc6d24
+#define base0A #fda331
+#define base0B #a1c659
+#define base0C #76c7b7
+#define base0D #6fb3d2
+#define base0E #d381c3
+#define base0F #be643c
 
-! Based on Tomorrow Theme
-*.foreground:   #c5c8c6
-*.background:   #1d1f21
-*.cursorColor:  orange
-*.color0:       #000000
-*.color1:       #912226
-*.color2:       #778900
-*.color3:       #ae7b00
-*.color4:       #1d2594
-*.color5:       #682a9b
-*.color6:       #2b6651
-*.color7:       #929593
-*.color8:       #666666
-*.color9:       #cc6666
-*.color10:      #b5bd68
-*.color11:      #f0c674
-*.color12:      #81a2be
-*.color13:      #b294bb
-*.color14:      #8abeb7
-*.color15:      #ecebec
-
-
-! Based on Tomorrow Theme
-!*.foreground:   #c5c8c6
-!*.background:   #1d1f21
-!*.cursorColor:  orange
-
-!-*- black/grey -*-
-!*.color0:           #000000
-!*.color8:           #666666
-!-*- red/bright-red -*-
-!*.color1:           #912226
-!*.color9:           #ff3334
-!-*- green/bright-green -*-
-!*.color2:           #b5bd68
-!*.color10:          #9ec400
-!-*- yellow (orange)/bright-yellow -*-
-!*.color3:           #de935f
-!*.color11:          #f0c674
-!-*- blue/bright-blue -*-
-!*.color4:           #81a2be
-!*.color12:          #81a2be
-!-*- magenta (purple)/bright-magenta -*-
-!*.color5:           #b294bb
-!*.color13:          #b777e0
-!-*- cyan (aqua)/bright-cyan -*-
-!*.color6:           #8abeb7
-!*.color14:          #54ced6
-!-*- light-grey (selection)/white (current line) -*-
-!*.color7:           #373b41
-!*.color15:          #282a2e
-
-! vim:fenc=utf-8:ts=2:sts=0:sw=2:et:
+! for dark versions
+*.foreground:   base05
+*.background:   base00
+*.cursorColor:  base05
+*.color0:       base00
+*.color1:       base08
+*.color2:       base0B
+*.color3:       base0A
+*.color4:       base0D
+*.color5:       base0E
+*.color6:       base0C
+*.color7:       base05
+*.color8:       base03
+*.color9:       base09
+*.color10:      base01
+*.color11:      base02
+*.color12:      base04
+*.color13:      base06
+*.color14:      base0F
+*.color15:      base07

@@ -1,5 +1,5 @@
 #!/bin/sh
-# ~/.xinitrc wandsas 2018/01/03
+# $Id: ~/.xinitrc wandsas 2018/01/03
 
 # Keyboard
 # German keyboard variants: nodeadkeys, deadacute, deadgraveacute
@@ -28,13 +28,10 @@ xset m 4 2
 ### slow
 # xset m 1 1
 
-# Default cursor
+# Cursor
 xsetroot -cursor_name left_ptr
 
-# Hide mouse cursor when idle
-unclutter -idle 8 -jitter -noevents
-
-# Set correct DPI
+# Set DPI
 xrandr --dpi 96
 
 # Disable PC-Speaker
@@ -49,8 +46,6 @@ xset -dpms
 
 # Key repeat
 xset r rate 300 80
-
-#export ISOCK=/tmp/i3-%u.XXXXXX/ipc-socket.%p
 
 # Start i3 window-manager (wm) on tty1, fluxbox on tty2 and dwm on tty3
 case "${1:-$(tty)}" in
