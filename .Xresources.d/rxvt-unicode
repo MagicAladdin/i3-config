@@ -26,8 +26,8 @@ URxvt.saveLines:        1000
 
 !-*- Trasperancy -*-
 URxvt*transparent:      True
-URxvt*inheritPixmap:    True
-URxvt*shading:          30
+URxvt*inheritPixmap:    False
+URxvt*shading:          100
 URxvt*tintColor:        #404040
 URxvt*depth:            32
 
@@ -36,7 +36,7 @@ URxvt*fading:           30
 URxvt*fadeColor:        #202020
 
 !-*- Fore/background -*-
-!*.background:       rgba:0000/0000/0000/cddd
+URxvt.background:       rgba:0000/0000/0000/cddd
 !URxvt*foreground:     #999
 
 !-*- Manpage -*-

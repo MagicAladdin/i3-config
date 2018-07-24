@@ -207,11 +207,14 @@ set $ws9  "09:  "
 set $ws10 "10:  "
 
 # Assign apps to workspaces
-assign [class="(?i)urxvt"]    $ws1
-assign [class="(?i)spacefm"]  $ws2
-assign [class="(?i)firefox"]  $ws3
+assign [class="(?i)urxvt"]                      $ws1
+assign [class="(?i)spacefm"]                    $ws2
+assign [class="(?i)firefox"]                    $ws3
 assign [class="(?i)chromium-browser-chromium"]  $ws3
-assign [class="(?i)chromium-devel"]  $ws3
+assign [class="(?i)chromium-devel"]             $ws3
+assign [class="(?i)emacs"]                      $ws4
+assign [class="(?i)jetbrains-studio"]           $ws4
+assign [class="(?i)jetbrains-pycharm-ce"]       $ws4
 
 # Switch to workspace
 bindsym $mod+1 workspace $ws1
