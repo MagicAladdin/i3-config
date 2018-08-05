@@ -1,5 +1,5 @@
 # permanently set alternative root dir
-# root=/path/to/root
+root=$HOME/.password-store
 
 # rofi command. Make sure to have "$@" as last argument
 _rofi () {
@@ -36,7 +36,7 @@ BROWSER='chromium'
 
 default_do='menu' # menu, autotype, copyPass, typeUser, typePass, copyUser, copyUrl, viewEntry, typeMenu, actionMenu, copyMenu, openUrl
 auto_enter='false'
-notify='false'
+notify='true'
 default_autotype='user :tab pass'
 
 # color of the help messages
@@ -45,16 +45,16 @@ help_color="#4872FF"
 
 # Clipboard settings
 # Possible options: primary, clipboard, both
-clip=primary
+clip=both
 
 # show help header
 help_header="true"
 
 # Options for generating new password entries
 # default_user is also used for password files that have no user field.
-#default_user=john_doe
+default_user=john_doe
 #default_user2=mary_ann
-#password_length=12
+password_length=24
 
 # Custom Keybindings
 autotype="Alt+1"

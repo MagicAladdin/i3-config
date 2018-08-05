@@ -55,8 +55,8 @@ include-file= ~/.config/polybar/modules/coretemp
 
 # {{{ bar/bottom right
 include-file = ~/.config/polybar/modules/filesystem
-include-file = ~/.config/polybar/modules/ram
-include-file = ~/.config/polybar/modules/cpu
+;include-file = ~/.config/polybar/modules/ram
+;include-file = ~/.config/polybar/modules/cpu
 ; }}}
 
 ; }}}

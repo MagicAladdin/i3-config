@@ -24,7 +24,7 @@ URxvt*matcher.button:   1
 URxvt*geometry:         128x36
 URxvt.saveLines:        1000
 
-!-*- Trasperancy -*-
+!-*- Transperancy -*-
 URxvt*transparent:      True
 URxvt*inheritPixmap:    False
 URxvt*shading:          100
@@ -37,11 +37,11 @@ URxvt*fadeColor:        #202020
 
 !-*- Fore/background -*-
 URxvt.background:       rgba:0000/0000/0000/cddd
-!URxvt*foreground:     #999
+!URxvt*foreground:       #999
 
 !-*- Manpage -*-
 URxvt.colorIT:        magenta
 URxvt.colorBD:        yellow
 URxvt.colorUL:        cyan
 
-! vim:fenc=utf-8:ft=x11:ts=2:sts=0:sw=2:et:
+! vim:fenc=utf-8:ft=Xresources:ts=2:sts=0:sw=2:et:
