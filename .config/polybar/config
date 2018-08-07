@@ -8,6 +8,7 @@
 ;=====================================================
 
 ; {{{ Colors
+
 [colors]
 background = ${xrdb:background}
 background-alt = ${xrdb:color9}
@@ -17,66 +18,105 @@ primary = ${xrdb:color6}
 secondary = ${xrdb:color14}
 alert = ${xrdb:color1}
 border = ${xrdb:color15}
+
 ; }}}
 
-; {{{ Status bars
-include-file = ~/.config/polybar/bars/top
-include-file = ~/.config/polybar/bars/bottom
+; {{{ Bars
+
+[bar/base]
+locale = de_DE.UTF-8
+width = 100%
+height = 27
+
+font-0 = RobotoMono Nerd Font:pixelsize=10;1
+font-1 = FontAwesome:pixelsize=10;2
+
+spacing = 3
+line-seize = 2
+padding-left = 0
+padding-right = 4
+module-margin-left = 0
+module-margin-right = 6
+
+line-size = 3
+line-color = #f00
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+
+[bar/top]
+inherit = bar/base
+bottom = false
+
+tray-position = right
+tray-padding = 2
+
+modules-left = i3 xworkspaces xwindow
+modules-center = mpd
+modules-right =  volume date
+
+
+[bar/bottom]
+inherit = bar/base
+bottom = true
+height = 32
+
+modules-left = hostname extip networkspeedup networkspeeddown
+modules-center = coretemp
+modules-right = cpu ram filesystem
+
 ; }}}
 
 ; {{{ Modules
 
-; {{{ bar/top left
+; bar/top left
 include-file = ~/.config/polybar/modules/i3
 include-file = ~/.config/polybar/modules/xwindow
-; }}}
 
-; {{{ bar/top center
+; bar/top center
 ;include-file = ~/.config/polybar/modules/mpd
 include-file = ~/.config/polybar/modules/weather
-; }}}
 
-; {{{ bar/top right
+; bar/top right
 include-file = ~/.config/polybar/modules/date
 include-file = ~/.config/polybar/modules/volume
 include-file = ~/.config/polybar/modules/powermenu
 include-file = ~/.config/polybar/modules/systray
-; }}}
 
-; {{{ bar/bottom left
+; bar/bottom left
 include-file = ~/.config/polybar/modules/networkspeed
 include-file = ~/.config/polybar/modules/extip
 include-file = ~/.config/polybar/modules/hostname
-; }}}
 
-; {{{  bar/bottom center
-include-file= ~/.config/polybar/modules/coretemp
-; }}}
+; bar/bottom center
+include-file= ~/.config/polybar/modules/system-cpu-temppercore
 
-# {{{ bar/bottom right
+; bar/bottom right
 include-file = ~/.config/polybar/modules/filesystem
-;include-file = ~/.config/polybar/modules/ram
-;include-file = ~/.config/polybar/modules/cpu
-; }}}
+include-file = ~/.config/polybar/modules/ram
+include-file = ~/.config/polybar/modules/cpu
 
 ; }}}
 
-; {{{ Settings
+; {{{ General settings
+
 [settings]
+
 compositing-background = over   ; xor, screen
 compositing-foreground = difference   ; source, over
 compositing-overline = over
 compositing-underline = over
 compositing-border = over
 screenchange-reload = true
-; }}}
 
-; {{{ global/wm
+
 [global/wm]
 margin-top = 0
 margin-bottom = 0
 fixed-center = true
 override-redirect = true
+
 ; }}}
 
-; vim:fenc=utf-8:ft=dosini:ts=2:sts=0:sw=2:fdm=marker:foldlevel=0:
+; vim:fenc=utf-8:ft=dosini:ts=2:sts=0:sw=2:fdm=marker:foldlevel=99:

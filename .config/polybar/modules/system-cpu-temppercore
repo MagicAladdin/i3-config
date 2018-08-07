@@ -1,0 +1,7 @@
+[module/coretemp]
+type = custom/script
+exec-if = sensors
+exec = ~/.config/polybar/scripts/system-cpu-temppercore.sh
+intervall = 60
+
+; vim:fenc=utf-8:ft=dosini:

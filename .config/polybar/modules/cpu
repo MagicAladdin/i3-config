@@ -2,13 +2,12 @@
 type = internal/cpu
 interval = 0.5
 
-format = <label> <ramp-coreload>
-;format = <label> <bar-load>
+;format = <label> <bar-coreload>
+format = <label> <bar-load>
 
 label = CPU [%percentage%%]
 ;label = CPU
 ;label-font = 3
-;label-foreground = #0088CC
 label-foreground = #0088CC
 
 ramp-coreload-0 = ▁

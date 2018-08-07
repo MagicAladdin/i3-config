@@ -1,8 +1,0 @@
-[module/coretemp]
-type = custom/script
-exec-if = sensors
-exec = sensors | grep Core | awk '{print substr($3, 2, 2)}' | tr '\n' ' ' | sed 's/ /C  /g' | sed 's/  $//'
-
-;label-foreground = #0088CC
-
-; vim:fenc=utf-8:ft=dosini:

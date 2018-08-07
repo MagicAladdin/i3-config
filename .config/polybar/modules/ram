@@ -19,6 +19,4 @@ bar-used-empty = █
 bar-used-empty-font = 3
 bar-used-empty-foreground = #44
 
-spacing = 2
-
 ; vim:fenc=utf-8:ft=dosini:
