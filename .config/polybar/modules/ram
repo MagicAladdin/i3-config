@@ -1,8 +1,9 @@
 [module/ram]
 type = internal/memory
+interval = 0.5
+
 format = <label> <bar-used>
-label = RAM [%gb_used%/%gb_total%]
-label-foreground = #0088CC
+label = %{F#0a6cf5}RAM%{F-} [%gb_used%/%gb_total%]
 
 bar-used-width = 10
 bar-used-gradient = true

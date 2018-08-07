@@ -1,17 +1,13 @@
 [module/filesystem]
 type = internal/fs
-interval = 25
+interval = 60
 
 mount-0 = /
 mount-1 = /home
 mount-2 = /tmp
 
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+label-mounted = %{F#0a6cf5}%mountpoint%%{F-}: %percentage_used%%
 ;label-mounted = %mountpoint%: %percentage_free%%/%percentage_used%% F: %free%, U: %used%, T: %total%
-label-unmounted = %mountpoint%: not mounted
-
 remove-unmounted = true
-;fixed-values = true
-spacing = 4
 
 ; vim:fenc=utf-8:ft=dosini:

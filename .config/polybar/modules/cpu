@@ -4,11 +4,7 @@ interval = 0.5
 
 ;format = <label> <ramp-coreload>
 format = <label> <bar-load>
-
-label = CPU [%percentage%%]
-;label = CPU
-;label-font = 3
-label-foreground = #0088CC
+label = %{F#0a6cf5}CPU%{F-} [%percentage%]
 
 ramp-coreload-0 = ▁
 ramp-coreload-0-font = 4
