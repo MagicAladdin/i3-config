@@ -2,7 +2,7 @@
 type = internal/cpu
 interval = 0.5
 
-;format = <label> <bar-coreload>
+;format = <label> <ramp-coreload>
 format = <label> <bar-load>
 
 label = CPU [%percentage%%]
