@@ -1,22 +1,35 @@
 [module/i3]
 type = internal/i3
-;format = <label-state> <label-mode>
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+
+; Available tags:
+;   <label-state> (default) - gets replaced with <label-(focused|unfocused|visible|urgent)>
+;   <label-mode> (default)
 format = <label-state>
 
-local-workspaces = true
-workspace-name-strip-nchars = 2
+;local-workspaces = true
+;workspace-name-strip-nchars = 2
+strip-wsnumbers = true
+
+fuzzy-match = true
 
 label-focused = %index% %icon%
 label-focused-background = #3f3f3f
 label-focused-padding = 2
-label-visible = %index% %icon%
-label-visible-padding = 2
+
 label-unfocused = %index% %icon%
 label-unfocused-foreground = #444
 label-unfocused-padding = 2
+
 label-urgent = %index% %icon%
 label-urgent-background = #bd2c40
 label-urgent-padding = 2
+
+label-visible = %index% %icon%
+label-visible-padding = 2
 
 
 ;index-sort = true
