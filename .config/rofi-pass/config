@@ -14,7 +14,7 @@ _rofi () {
 fix_layout=false
 
 layout_cmd () {
-  setxkbmap us
+  setxkbmap de-latin1-nodeadkeys
 }
 
 # fields to be used

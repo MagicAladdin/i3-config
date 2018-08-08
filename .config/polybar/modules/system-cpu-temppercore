@@ -1,7 +1,10 @@
-[module/coretemp]
+
+[module/cputemp]
 type = custom/script
+intervall = 60
+
 exec-if = sensors
 exec = ~/.config/polybar/scripts/system-cpu-temppercore.sh
-intervall = 60
+; format-suffix = "°C"
 
 ; vim:fenc=utf-8:ft=dosini:

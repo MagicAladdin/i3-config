@@ -27,14 +27,17 @@ border = ${xrdb:color15}
 locale = de_DE.UTF-8
 width = 100%
 height = 27
+radius = 6.0
 
 font-0 = RobotoMono Nerd Font:pixelsize=10;1
 font-1 = FontAwesome:pixelsize=10;2
 
 spacing = 3
 line-seize = 2
+
 padding-left = 0
 padding-right = 4
+
 module-margin-left = 0
 module-margin-right = 6
 
@@ -63,8 +66,8 @@ bottom = true
 height = 32
 
 modules-left = hostname extip networkspeedup networkspeeddown
-modules-center = coretemp
-modules-right = cpu ram filesystem
+modules-center = cputemp
+modules-right = cpu memory filesystem
 
 ; }}}
 
@@ -91,10 +94,11 @@ include-file = ~/.config/polybar/modules/hostname
 
 ; bar/bottom center
 include-file= ~/.config/polybar/modules/system-cpu-temppercore
+include-file= ~/.config/polybar/modules/temperature
 
 ; bar/bottom right
 include-file = ~/.config/polybar/modules/filesystem
-include-file = ~/.config/polybar/modules/ram
+include-file = ~/.config/polybar/modules/memory
 include-file = ~/.config/polybar/modules/cpu
 
 ; }}}

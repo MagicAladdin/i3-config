@@ -5,7 +5,6 @@
 # {{{ i3 modifier keys
 
 set $mod Mod4
-
 set $alt Mod1
 
 # Use mouse+$mod to drag floating windows to their wanted position
@@ -49,7 +48,7 @@ client.background       #ffffff
 # {{{ Application keybindings
 
 bindsym $mod+Return         exec --no-startup-id alacritty
-bindsym $mod+Shift+Return   exec --no-startup-id kitty
+bindsym $mod+Shift+Return   exec --no-startup-id alacritty -t foobar -e tmux
 
 bindsym $alt+Return         exec urxvtc
 bindsym $alt+Shift+Return   exec xterm
@@ -66,11 +65,12 @@ bindsym $mod+d              exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+Shift+d        exec dmenu_run
 
 bindsym $mod+Shift+n        exec --no-startup-id nvim-gtk
+bindsym $mod+shift+m        exec --no-startup-id alacritty -t __mail -e neomutt
 bindsym $mod+Shift+c        exec --no-startup-id chromium
 bindsym $mod+Shift+f        exec --no-startup-id firefox
 
 bindsym $mod+Shift+t        exec --no-startup-id lxtask
-bindsym $mod+t              exec --no-startup-id urxvtc -e htop
+bindsym $mod+t              exec --no-startup-id alacritty -t htop -e htop
 
 bindsym $mod+p              exec ~/.config/i3/scripts/pass-peco
 bindsym $mod+Shift+p        exec ~/.config/i3/scripts/pass-peco -c
@@ -118,8 +118,8 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # Split in horizontal/vertical orientation
-bindsym $mod+Ctrl+h split h
-bindsym $mod+Ctrl+v split v
+bindsym $alt+h split h
+bindsym $alt+v split v
 
 # Enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -140,8 +140,8 @@ bindsym $mod+a focus parent
 bindsym $mod+Shift+a focus child
 
 # Scratchpad show / hide
-bindsym $mod+plus move scratchpad
-bindsym $mod+minus scratchpad show
+bindsym $mod+Shift+plus scratchpad show
+bindsym $mod+Shift+minus move scratchpad
 
 # Resize window
 mode "resize" {
@@ -178,7 +178,6 @@ for_window [class="(?i)gpicview"]             floating enable
 for_window [class="(?i)gsimplecal"]           floating enable
 for_window [class="(?i)Gparted"]              floating enable
 
-
 for_window [class="(?i)lxtask"]               floating enable
 for_window [class="(?i)lxappearance"]         floating enable
 for_window [class="(?i)recordmydesktop"]      floating enable
@@ -209,10 +208,10 @@ set $ws10 "10:  "
 
 # Assign apps to workspaces
 assign [class="(?i)urxvt"]                      $ws1
+assign [class="(?i)alacritty"]                  $ws1
 assign [class="(?i)spacefm"]                    $ws2
 assign [class="(?i)firefox"]                    $ws3
 assign [class="(?i)chromium-browser-chromium"]  $ws3
-assign [class="(?i)chromium-devel"]             $ws3
 assign [class="(?i)emacs"]                      $ws4
 assign [class="(?i)jetbrains-studio"]           $ws4
 assign [class="(?i)jetbrains-pycharm-ce"]       $ws4

@@ -1,3 +1,4 @@
+
 [module/filesystem]
 type = internal/fs
 interval = 60
@@ -6,7 +7,7 @@ mount-0 = /
 mount-1 = /home
 mount-2 = /tmp
 
-label-mounted = %{F#0a6cf5}%mountpoint%%{F-}: %percentage_used%%
+label-mounted = %{F#63FB99}%mountpoint%%{F-} %percentage_used%%
 ;label-mounted = %mountpoint%: %percentage_free%%/%percentage_used%% F: %free%, U: %used%, T: %total%
 remove-unmounted = true
 

@@ -1,0 +1,22 @@
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+
+format = <ramp>x<label>
+format-spacing = 1
+format-underline-size = #f50a4d
+format-warn = <ramp> x y7 <label-warn>
+format-warn-underline = #a07
+
+label = %temperature%
+label-warn = %temperature%
+label-warn-foreground = #009
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-foreground = #025
+
+; vim:fenc=utf-8:ft=dosini:

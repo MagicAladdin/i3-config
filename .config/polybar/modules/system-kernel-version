@@ -1,5 +1,0 @@
-
-[module/system-kernel-version]
-type = custom/script
-exec = uname -r
-interval = 1024

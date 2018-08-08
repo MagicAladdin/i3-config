@@ -1,3 +1,4 @@
+
 [module/weather]
 type = custom/script
 interval = 1800
