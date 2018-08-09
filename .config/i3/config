@@ -198,16 +198,16 @@ for_window [class="(?i)xcalc"]                floating enable
 # {{{ Workspaces
 
 # Define workspaces
-set $ws1  "01:  "
-set $ws2  "02:  "
-set $ws3  "03:  "
-set $ws4  "04:  "
-set $ws5  "05:  "
-set $ws6  "06:  "
-set $ws7  "07:  "
-set $ws8  "08:  "
-set $ws9  "09:  "
-set $ws10 "10:  "
+set $ws1  "01"
+set $ws2  "02"
+set $ws3  "03"
+set $ws4  "04"
+set $ws5  "05"
+set $ws6  "06"
+set $ws7  "07"
+set $ws8  "08"
+set $ws9  "09"
+set $ws10 "10"
 
 # Assign apps to workspaces
 assign [class="(?i)urxvt"]                      $ws1
@@ -218,6 +218,7 @@ assign [class="(?i)chromium-browser-chromium"]  $ws3
 assign [class="(?i)jetbrains-studio"]           $ws4
 assign [class="(?i)jetbrains-pycharm-ce"]       $ws4
 assign [class="(?i)emacs"]                      $ws5
+assign [class="(?i)wireshark-gtk"]              $ws6
 
 # Switch to workspace
 bindsym $mod+1 workspace $ws1
