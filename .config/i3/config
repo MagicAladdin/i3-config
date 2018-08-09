@@ -189,7 +189,7 @@ for_window [class="(?i)seahorse"]             floating enable
 for_window [class="(?i)Snapper-gui"]          floating enable
 for_window [class="(?i)virt-manager"]         floating enable
 for_window [class="(?i)vinagre"]              floating enable
-for_window [class="(?i)wireshark-gtk"]        floating enable
+#for_window [class="(?i)wireshark-gtk"]        floating enable
 for_window [class="(?i)xarchiver"]            floating enable
 for_window [class="(?i)xcalc"]                floating enable
 

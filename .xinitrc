@@ -47,10 +47,6 @@ xset -dpms
 # Key repeat
 xset r rate 300 80
 
-# xdg user-dirs
-xdg-user-dirs-update
-xdg-user-dirs-gtk-update
-
 # Start i3 window-manager (wm) on tty1, fluxbox on tty2 and dwm on tty3
 case "${1:-$(tty)}" in
     (i3*|*tty1)
