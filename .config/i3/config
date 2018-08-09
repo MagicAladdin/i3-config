@@ -73,7 +73,7 @@ bindsym $mod+Shift+t        exec --no-startup-id lxtask
 bindsym $mod+t              exec --no-startup-id alacritty -t htop -e htop
 
 bindsym $mod+p              exec --no-startup-id rofi-pass
-bindsym $mod+Shift+p        exec --np-startip-id rofi-surfraw
+bindsym $mod+Shift+p        exec --no-startup-id rofi-surfraw
 
 bindsym $alt+l              exec --no-startup-id betterlockscreen --lock
 
@@ -215,9 +215,9 @@ assign [class="(?i)alacritty"]                  $ws1
 assign [class="(?i)spacefm"]                    $ws2
 assign [class="(?i)firefox"]                    $ws3
 assign [class="(?i)chromium-browser-chromium"]  $ws3
-assign [class="(?i)emacs"]                      $ws4
 assign [class="(?i)jetbrains-studio"]           $ws4
 assign [class="(?i)jetbrains-pycharm-ce"]       $ws4
+assign [class="(?i)emacs"]                      $ws5
 
 # Switch to workspace
 bindsym $mod+1 workspace $ws1
