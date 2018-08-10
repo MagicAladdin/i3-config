@@ -34,7 +34,7 @@ BROWSER='chromium'
 
 ## Misc settings
 
-default_do='menu' # menu, autotype, copyPass, typeUser, typePass, copyUser, copyUrl, viewEntry, typeMenu, actionMenu, copyMenu, openUrl
+default_do='copyPass' # menu, autotype, copyPass, typeUser, typePass, copyUser, copyUrl, viewEntry, typeMenu, actionMenu, copyMenu, openUrl
 auto_enter='false'
 notify='true'
 default_autotype='user :tab pass'
@@ -52,7 +52,7 @@ help_header="true"
 
 # Options for generating new password entries
 # default_user is also used for password files that have no user field.
-default_user=john_doe
+default_user=wandsas
 #default_user2=mary_ann
 password_length=24
 
