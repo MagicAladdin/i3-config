@@ -217,6 +217,7 @@ assign [class="(?i)firefox"]                    $ws3
 assign [class="(?i)chromium-browser-chromium"]  $ws3
 assign [class="(?i)jetbrains-studio"]           $ws4
 assign [class="(?i)jetbrains-pycharm-ce"]       $ws4
+assign [class="(?i)SmartGit"]                   $ws4
 assign [class="(?i)emacs"]                      $ws5
 assign [class="(?i)wireshark-gtk"]              $ws6
 
