@@ -51,4 +51,4 @@ echo "output_file_list(); quit()" | pqiv --actions-from-stdin testg
 # Output a list of all files from the test folder that pqiv can
 # handle and quit.
 
-# vim: set fenc=utf-8 ft=dosini
+# vim: set fenc=utf-8 ft=dosinib

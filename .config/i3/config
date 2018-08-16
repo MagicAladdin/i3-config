@@ -50,8 +50,11 @@ client.background       #ffffff
 bindsym $mod+Return         exec --no-startup-id alacritty
 bindsym $mod+Shift+Return   exec --no-startup-id alacritty -t foobar -e tmux
 
-bindsym $alt+Return         exec urxvtc
-bindsym $alt+Shift+Return   exec xterm
+bindsym $mod+BackSpace [class="alacritty"] scratchpad show
+bindsym $mod+Shift+BackSpace [class="spacefm"] scratchpad show
+
+bindsym $alt+Return         exec --no-startup-id alacritty -e bash
+bindsym $alt+Shift+Return   exec --no-startup-id alacritty -e bash tmux
 
 # Spacefm file-manager
 bindsym $mod+Ctrl+Return    exec --no-startup-id spacefm
@@ -101,7 +104,7 @@ bindsym $mod+Ctrl+p exec --no-startup-id i3-input -F '[con_mark="%s"] focus' -l 
 bindsym $mod+Shift+r restart
 
 # Exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to logout your X session and exit i3?' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # }}}
 
@@ -120,8 +123,8 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # Split in horizontal/vertical orientation
-bindsym $alt+h split h
-bindsym $alt+v split v
+bindsym $mod+equal split h
+bindsym $mod+Shift+equal split v
 
 # Enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -131,17 +134,17 @@ bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
-# Toggle tiling / floating
+# Toggle between tiling and floating:q (focused container)
 bindsym $mod+Shift+space floating toggle
 
-# Change focus between tiling / floating windows
+# Toggle focus between tiling- and floating-windows
 bindsym $mod+Ctrl+space focus mode_toggle
 
-# Focus the parent/child container
+# Focus the parent / child container
 bindsym $mod+a focus parent
 bindsym $mod+Shift+a focus child
 
-# Scratchpad show / hide
+# Show / hide scratchpad
 bindsym $mod+Shift+plus scratchpad show
 bindsym $mod+Shift+minus move scratchpad
 
@@ -215,11 +218,16 @@ assign [class="(?i)alacritty"]                  $ws1
 assign [class="(?i)spacefm"]                    $ws2
 assign [class="(?i)firefox"]                    $ws3
 assign [class="(?i)chromium-browser-chromium"]  $ws3
+assign [class="(?i)chromium-devel"]             $ws3
 assign [class="(?i)jetbrains-studio"]           $ws4
 assign [class="(?i)jetbrains-pycharm-ce"]       $ws4
 assign [class="(?i)SmartGit"]                   $ws4
-assign [class="(?i)emacs"]                      $ws5
+assign [class="(?i)emacs"]                      $ws4
+assign [class="(?i)libreoffice"]                $ws5
 assign [class="(?i)wireshark-gtk"]              $ws6
+assign [class="(?i)vinagre"]                    $ws6
+assign [class="(?i)zenmap"]                     $ws6
+assign [class="(?i)virt-manager"]               $ws6
 
 # Switch to workspace
 bindsym $mod+1 workspace $ws1

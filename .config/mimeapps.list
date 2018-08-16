@@ -51,10 +51,11 @@ application/x-yaml=nvim-gtk.desktop;
 application/x-shellscript=nvim-gtk.desktop;nvim.desktop;
 application/octet-stream=xarchiver.desktop
 application/pcx=gpicview.desktop
-application/pdf=mupdf.desktop;pqiv.desktop;
+application/pdf=pqiv.desktop;mupdf.desktop;
 application/x-bzip-compressed-tar=xarchiver.desktop;
 application/zip=xarchiver.desktop;
 application/x-executable=nvim-gtk.desktop;
+application/vnd.ms-publisher=pqiv.desktop;
 
 [Default Applications]
 inode/directory=spacefm-folder-handler.desktop;
@@ -74,8 +75,9 @@ application/x-shellscript=nvim-gtk.desktop;
 application/zip=xarchiver.desktop;
 application/x-executable=nvim-gtk.desktop;
 application/x-bzip-compressed-tar=xarchiver.desktop;
-application/pdf=mupdf.desktop;pqiv.desktop;
+application/pdf=pqiv.desktop;mupdf.desktop;
 x-scheme-handler/http=chromium-browser-chromium.desktop
 x-scheme-handler/https=chromium-browser-chromium.desktop
 x-scheme-handler/about=chromium-browser-chromium.desktop
 x-scheme-handler/unknown=chromium-browser-chromium.desktop
+application/vnd.ms-publisher=pqiv.desktop;
