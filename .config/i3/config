@@ -50,8 +50,8 @@ client.background       #ffffff
 bindsym $mod+Return         exec --no-startup-id alacritty
 bindsym $mod+Shift+Return   exec --no-startup-id alacritty -t foobar -e tmux
 
-bindsym $mod+BackSpace [class="alacritty"] scratchpad show
-bindsym $mod+Shift+BackSpace [class="spacefm"] scratchpad show
+bindsym $mod+BackSpace [class="Alacritty"] scratchpad show
+bindsym $mod+Shift+BackSpace [class="Alacritty"] move scratchpad
 
 bindsym $alt+Return         exec --no-startup-id alacritty -e bash
 bindsym $alt+Shift+Return   exec --no-startup-id alacritty -e bash tmux
@@ -123,8 +123,8 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # Split in horizontal/vertical orientation
-bindsym $mod+equal split h
-bindsym $mod+Shift+equal split v
+bindsym $mod+Ctrl+h split h
+bindsym $mod+Ctrl+v split v
 
 # Enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -192,7 +192,7 @@ for_window [class="(?i)seahorse"]             floating enable
 for_window [class="(?i)Snapper-gui"]          floating enable
 for_window [class="(?i)virt-manager"]         floating enable
 for_window [class="(?i)vinagre"]              floating enable
-#for_window [class="(?i)wireshark-gtk"]        floating enable
+for_window [class="(?i)zenmap"]               floating enable
 for_window [class="(?i)xarchiver"]            floating enable
 for_window [class="(?i)xcalc"]                floating enable
 
@@ -216,6 +216,7 @@ set $ws10 "10"
 assign [class="(?i)urxvt"]                      $ws1
 assign [class="(?i)alacritty"]                  $ws1
 assign [class="(?i)spacefm"]                    $ws2
+assign [class="(?i)snappergui"]                 $ws2
 assign [class="(?i)firefox"]                    $ws3
 assign [class="(?i)chromium-browser-chromium"]  $ws3
 assign [class="(?i)chromium-devel"]             $ws3
@@ -223,7 +224,14 @@ assign [class="(?i)jetbrains-studio"]           $ws4
 assign [class="(?i)jetbrains-pycharm-ce"]       $ws4
 assign [class="(?i)SmartGit"]                   $ws4
 assign [class="(?i)emacs"]                      $ws4
+assign [class="(?i)gimp"]                       $ws5
 assign [class="(?i)libreoffice"]                $ws5
+assign [class="(?i)libreoffice-base"]           $ws5
+assign [class="(?i)libreoffice-calc"]           $ws5
+assign [class="(?i)libreoffice-draw"]           $ws5
+assign [class="(?i)libreoffice-impress"]        $ws5
+assign [class="(?i)libreoffice-math"]           $ws5
+assign [class="(?i)libreoffice-writer"]         $ws5
 assign [class="(?i)wireshark-gtk"]              $ws6
 assign [class="(?i)vinagre"]                    $ws6
 assign [class="(?i)zenmap"]                     $ws6

@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=pycharm
-Type=Application
-Comment=Intelligent Python IDE with unique code assistance and analysis
-Exec=pycharm-community
-TryExec=pycharm-community
-Icon=pycharm-community
-Categories=Development;
