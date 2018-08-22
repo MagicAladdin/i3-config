@@ -45,15 +45,12 @@ client.background       #ffffff
 
 # }}}
 
-# {{{ Application keybindings
+# {{{ User keybindings
 
 bindsym $mod+Return         exec --no-startup-id alacritty
-bindsym $mod+Shift+Return   exec --no-startup-id alacritty -t foobar -e tmux
+bindsym $mod+Shift+Return   exec --no-startup-id alacritty -e tmux
 
-#bindsym $mod+BackSpace [class="Alacritty"] scratchpad show
-#bindsym $mod+Shift+BackSpace [class="Alacritty"] move scratchpad
-
-bindsym $mod+BackSpace      exec --no-startup-id alacritty -e bash
+bindsym $mod+BackSpace      exec --no-startup-id xterm -t foobar
 
 # Spacefm file-manager
 bindsym $mod+Ctrl+Return    exec --no-startup-id spacefm
@@ -79,35 +76,26 @@ bindsym $mod+Shift+p        exec --no-startup-id rofi-surfraw
 
 bindsym $alt+l              exec --no-startup-id betterlockscreen --lock
 
-bindsym Print               exec scrot
-bindsym Shift+Print         exec scrot -u
-
 # }}}
 
-# {{{ System keybindings
+# {{{ Windows keybindings
+
+# Make screenshot of complete desktop or selected window
+bindsym Print               exec scrot
+bindsym Shift+Print         exec scrot -u
 
 # Kill focused window
 bindsym $mod+Shift+q kill
 
+# Restart i3
+bindsym $mod+Shift+r restart
+
+# Exit i3
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Log out of your X session and exit i3?' -b 'Yes, exit i3' 'i3-msg exit'"
+
 # Rename workspace
 bindsym $mod+Ctrl+r exec i3-input -F 'rename workspace to "%s"' -P 'Rename workspace: '
 bindsym $mod+Ctrl+n exec i3-input -F 'workspace "%s"' -P 'Create workspace: '
-
-# Mark a container with a single character
-bindsym $mod+Ctrl+m exec --no-startup-id i3-input -F 'mark %s' 1 -P 'Mark: '
-
-# Go to the container marked with the above example
-bindsym $mod+Ctrl+p exec --no-startup-id i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Go to: '
-
-# Restart i3 session
-bindsym $mod+Shift+r restart
-
-# Exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to logout your X session and exit i3?' -b 'Yes, exit i3' 'i3-msg exit'"
-
-# }}}
-
-# {{{ Windows
 
 # Change focus
 bindsym $mod+h focus left
@@ -133,21 +121,24 @@ bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
-# Changed focused container betweeen tiling and floating
-bindsym $mod+Shift+BackSpace floating toggle
+# Change focused container betweeen tiling and floating window mode
+bindsym $mod+Shift+space floating toggle
 
-# Switch focus between tiling/floating windows on the current workspace
-bindsym $mod+Ctrl+BackSpace focus mode_toggle
-
-# Focus the parent / child container
-bindsym $mod+a focus parent
-bindsym $mod+Shift+a focus child
+# Switch focus between tiling and floating windows on current workspace
+bindsym $mod+Ctrl+space focus mode_toggle
 
 # Show / hide scratchpad
 bindsym $mod+Shift+plus scratchpad show
 bindsym $mod+Shift+minus move scratchpad
 
-# Resize window
+# Focus the parent / child container
+#bindsym $mod+a focus parent
+#bindsym $mod+Shift+a focus child
+
+# }}}
+
+# {{{ Resize window
+
 mode "resize" {
         bindsym h resize shrink width 10 px or 10 ppt
         bindsym j resize grow height 10 px or 10 ppt
@@ -161,7 +152,9 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-# Floating windows
+# }}}
+
+# {{{ Floating windows
 
 # Enable floating for window-roles and window-types
 for_window [window_role="bubble"]             floating enable
@@ -181,6 +174,8 @@ for_window [class="(?i)easytag"]              floating enable
 for_window [class="(?i)gpicview"]             floating enable
 for_window [class="(?i)gsimplecal"]           floating enable
 for_window [class="(?i)gucharmap"]            floating enable
+for_window [class="(?i)gitk"]                 floating enable
+for_window [class="(?i)git-gui"]              floating enable
 for_window [class="(?i)Gparted"]              floating enable
 
 for_window [class="(?i)lxtask"]               floating enable
@@ -210,31 +205,6 @@ set $ws7  "07"
 set $ws8  "08"
 set $ws9  "09"
 set $ws10 "10"
-
-# Assign apps to workspaces
-assign [class="(?i)urxvt"]                      $ws1
-assign [class="(?i)alacritty"]                  $ws1
-assign [class="(?i)spacefm"]                    $ws2
-assign [class="(?i)snappergui"]                 $ws2
-assign [class="(?i)firefox"]                    $ws3
-assign [class="(?i)chromium-browser-chromium"]  $ws3
-assign [class="(?i)chromium-devel"]             $ws3
-assign [class="(?i)jetbrains-studio"]           $ws4
-assign [class="(?i)jetbrains-pycharm-ce"]       $ws4
-assign [class="(?i)SmartGit"]                   $ws4
-assign [class="(?i)emacs"]                      $ws4
-assign [class="(?i)gimp"]                       $ws5
-assign [class="(?i)libreoffice"]                $ws5
-assign [class="(?i)libreoffice-base"]           $ws5
-assign [class="(?i)libreoffice-calc"]           $ws5
-assign [class="(?i)libreoffice-draw"]           $ws5
-assign [class="(?i)libreoffice-impress"]        $ws5
-assign [class="(?i)libreoffice-math"]           $ws5
-assign [class="(?i)libreoffice-writer"]         $ws5
-assign [class="(?i)wireshark-gtk"]              $ws6
-assign [class="(?i)vinagre"]                    $ws6
-assign [class="(?i)zenmap"]                     $ws6
-assign [class="(?i)virt-manager"]               $ws6
 
 # Switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -266,10 +236,41 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
-bindsym $mod+Shift+Left   move container to output left
-bindsym $mod+Shift+Right  move container to output right
+# }}}
+
+# {{{ Assign apps to workspaces
+# xterm
+assign [class="(?i)urxvt"]                      $ws1
+assign [class="(?i)alacritty"]                  $ws1
+# file-manager
+assign [class="(?i)spacefm"]                    $ws2
+assign [class="(?i)snappergui"]                 $ws2
+# browser
+assign [class="(?i)firefox"]                    $ws3
+assign [class="(?i)chromium-browser-chromium"]  $ws3
+assign [class="(?i)chromium-devel"]             $ws3
+# ide
+assign [class="(?i)jetbrains-studio"]           $ws4
+assign [class="(?i)jetbrains-pycharm-ce"]       $ws4
+assign [class="(?i)SmartGit"]                   $ws4
+assign [class="(?i)emacs"]                      $ws4
+# text & grafik
+assign [class="(?i)gimp"]                       $ws5
+assign [class="(?i)libreoffice"]                $ws5
+assign [class="(?i)libreoffice-base"]           $ws5
+assign [class="(?i)libreoffice-calc"]           $ws5
+assign [class="(?i)libreoffice-draw"]           $ws5
+assign [class="(?i)libreoffice-impress"]        $ws5
+assign [class="(?i)libreoffice-math"]           $ws5
+assign [class="(?i)libreoffice-writer"]         $ws5
+
+assign [class="(?i)wireshark-gtk"]              $ws6
+assign [class="(?i)vinagre"]                    $ws6
+assign [class="(?i)zenmap"]                     $ws6
+assign [class="(?i)virt-manager"]               $ws6
 
 # }}}
+
 
 # {{{ Autostart services
 
