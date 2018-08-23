@@ -271,7 +271,6 @@ assign [class="(?i)virt-manager"]               $ws6
 
 # }}}
 
-
 # {{{ Autostart services
 
 exec_always --no-startup-id feh --bg-fill ~/.wallpaper-i3
