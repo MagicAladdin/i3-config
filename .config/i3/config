@@ -65,7 +65,8 @@ bindsym $mod+Shift+d        exec dmenu_run
 
 bindsym $mod+Shift+n        exec --no-startup-id nvim-gtk
 bindsym $mod+shift+m        exec --no-startup-id alacritty -t __mail -e neomutt
-bindsym $mod+Shift+c        exec --no-startup-id chromium
+bindsym $mod+Shift+c        exec --no-startup-id chromium-browser
+bindsym $mod+Ctrl+c exec --no-startup-id chromium-browser --proxy-server="http://localhost:8118"
 bindsym $mod+Shift+f        exec --no-startup-id firefox
 
 bindsym $mod+Shift+t        exec --no-startup-id lxtask
