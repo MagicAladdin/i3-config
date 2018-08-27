@@ -49,6 +49,8 @@ client.background       #ffffff
 
 bindsym $mod+Return         exec --no-startup-id alacritty
 bindsym $mod+Shift+Return   exec --no-startup-id alacritty -e tmux
+bindsym $alt+Return         exec --no-startup-id alacritty -e 'exec bash'
+bindsym $alt+Shift+Return   exec --no-startup-id alacritty -e 'exec bash && tmux'
 
 bindsym $mod+BackSpace      exec --no-startup-id xterm -t foobar
 
