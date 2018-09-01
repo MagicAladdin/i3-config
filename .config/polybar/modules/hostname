@@ -3,7 +3,7 @@ type = custom/script
 interval = 256
 
 format = "<label> "
-format-prefix = " "
+#format-prefix = " "
 ;format-prefix-foreground = ${colors.foreground-alt}
 
 exec = echo "$(uname -n)"

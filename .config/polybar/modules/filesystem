@@ -6,6 +6,7 @@ interval = 60
 mount-0 = /
 mount-1 = /home
 mount-2 = /tmp
+mount-3 = /var/tmp
 
 label-mounted = %{F#63FB99}%mountpoint%%{F-} %percentage_used%%
 ;label-mounted = %mountpoint%: %percentage_free%%/%percentage_used%% F: %free%, U: %used%, T: %total%
