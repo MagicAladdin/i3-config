@@ -174,6 +174,7 @@ for_window [class="(?i)jetbrains-studio"]     floating enable
 for_window [class="(?i)jetbrains-pycharm-ce"] floating enable
 for_window [class="(?i)emacs"]                floating enable
 for_window [class="(?i)easytag"]              floating enable
+for_window [class="(?i)etcher-electron"]              floating enable
 for_window [class="(?i)gpicview"]             floating enable
 for_window [class="(?i)gsimplecal"]           floating enable
 for_window [class="(?i)gucharmap"]            floating enable
